@@ -72,8 +72,8 @@ resource "azurerm_network_interface_security_group_association" "main" {
 
 resource "azurerm_linux_virtual_machine" "main" {
   name                            = "${var.prefix}-vm"
-  resource_group_name             = azurerm_resource_group.main.name
-  location                        = azurerm_resource_group.main.location
+  resource_group_name             = "DevOps-ResourceGroup"
+  location                        = "koreacentral"
   size                            = "Standard_D1_v2"
   admin_username                  = "${var.username}"
   admin_password                  = "${var.password}"
@@ -91,7 +91,6 @@ resource "azurerm_linux_virtual_machine" "main" {
     sku       = "18.04-LTS"
     version   = "latest"
   }
-  resource_group_name = "DevOps-ResourceGroup"
   
   os_disk {
     storage_account_type = "Standard_LRS"
