@@ -49,10 +49,6 @@ resource "azurerm_network_interface" "internal" {
 }
 
 
-resource "azurerm_network_interface_security_group_association" "main" {
-  network_interface_id      = azurerm_network_interface.internal.id
-}
-
 resource "azurerm_linux_virtual_machine" "main" {
   name                            = "${var.prefix}-vm"
   resource_group_name             = "DevOps-ResourceGroup"
