@@ -3,7 +3,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "main" {
-  name     = "DevOps-ResourceGroup"
+  name     = "${var.prefix}ResourceGroup"
   location = var.location
 }
 
