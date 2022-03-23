@@ -51,7 +51,6 @@ resource "azurerm_network_interface" "internal" {
 
 resource "azurerm_network_interface_security_group_association" "main" {
   network_interface_id      = azurerm_network_interface.internal.id
-  network_security_group_id = azurerm_network_security_group.ssh.id
 }
 
 resource "azurerm_linux_virtual_machine" "main" {
