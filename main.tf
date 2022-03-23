@@ -2,11 +2,6 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "main" {
-  name     = "${var.prefix}"
-  location = var.location
-}
-
 resource "azurerm_virtual_network" "main" {
   name                = "${var.prefix}-network"
   address_space       = ["10.0.0.0/22"]
@@ -96,7 +91,8 @@ resource "azurerm_linux_virtual_machine" "main" {
     sku       = "18.04-LTS"
     version   = "latest"
   }
-
+  resource_group_name = "DevOps-ResourceGroup"
+  
   os_disk {
     storage_account_type = "Standard_LRS"
     caching              = "ReadWrite"
