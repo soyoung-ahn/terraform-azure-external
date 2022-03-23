@@ -3,7 +3,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "main" {
-  name     = "${var.prefix}-resource-group"
+  name     = "DevOps-ResourceGroup"
   location = var.location
 }
 
@@ -86,6 +86,9 @@ resource "azurerm_linux_virtual_machine" "main" {
   network_interface_ids = [
     azurerm_network_interface.main.id,
     azurerm_network_interface.internal.id,
+  tags = {
+    SWQA = "DevOps"
+  }
   ]
 
   source_image_reference {
