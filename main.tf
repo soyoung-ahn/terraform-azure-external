@@ -6,7 +6,7 @@ resource "azurerm_virtual_network" "main" {
   name                = "${var.prefix}-network"
   address_space       = ["10.0.0.0/22"]
   location            = "koreacentral"
-  resource_group_name = azurerm_resource_group.main.name
+  resource_group_name = "DevOps-ResourceGroup"
 }
 
 resource "azurerm_subnet" "internal" {
