@@ -51,7 +51,6 @@ resource "azurerm_network_interface" "internal" {
 resource "azurerm_network_security_group" "ssh" {
   name                = "ssh_server"
   location            = "koreacentral"
-  resource_group_name = "DevOps-ResourceGroup"
   security_rule {
     access                     = "Allow"
     direction                  = "Inbound"
