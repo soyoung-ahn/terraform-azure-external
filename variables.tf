@@ -1,21 +1,21 @@
 variable "prefix" {
   description = "The prefix which should be used for all resources in this example"
-  prefix = "terraform-azure-external-HI"
+  default = "terraform-azure-external-HI"
 }
 
 variable "location" {
   description = "The Azure Region in which all resources in this example should be created."
-  location = "koreacentral"
+  default = "koreacentral"
 }
 
 variable "username" {
   description = "admin username"
-  username = "devos"
+  default = "devos"
 }
 
 variable "password" {
   description = "admin password"
-  password = "Pa55w0rd"
+  default = "Pa55w0rd"
 }
 
 
