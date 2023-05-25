@@ -2,18 +2,12 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_virtual_network" "main" {
-  name                = "${var.prefix}-network"
-  address_space       = ["10.0.0.0/22"]
-  location            = "koreacentral"
-  resource_group_name = "DevOps-ResourceGroup"
-}
 
 resource "azurerm_subnet" "internal" {
   name                 = "internal_subnet"
   resource_group_name  = "DevOps-ResourceGroup"
   virtual_network_name = azurerm_virtual_network.main.name
-  address_prefixes     = ["1000.0.2.0/24"]
+  address_prefixes     = ["10.0.2.0/24"]
 }
 
 resource "azurerm_public_ip" "pip" {
