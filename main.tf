@@ -2,6 +2,12 @@ provider "azurerm" {
   features {}
 }
 
+resource "azurerm_virtual_network" "main" {
+  name                = "${var.prefix}-network"
+  address_space       = ["10.0.0.0/22"]
+  location            = "koreacentral"
+  resource_group_name = "DevOps-ResourceGroup"
+}
 
 resource "azurerm_subnet" "internal" {
   name                 = "internal_subnet"
