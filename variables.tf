@@ -1,6 +1,6 @@
 variable "prefix" {
   description = "The prefix which should be used for all resources in this example"
-  default = "123terraform-azure-external-SY"
+  default = "terraform-azure-external-SY"
 }
 
 variable "location" {
